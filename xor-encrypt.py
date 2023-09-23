@@ -23,14 +23,28 @@ def xor_encrypt_decrypt(input_str, key):
     
     return encrypted_str
 
-# Test the function
-message = "Hello, world!"
-key = "key"
 
-# Encrypt the message
-encrypted_message = xor_encrypt_decrypt(message, key)
-print(f"Encrypted Message: {encrypted_message}")
+user_input = input("""Hello. 
+If you want to encrypt a message, type 1. 
+If you want to decrypt a message, type 2.
+""")
 
-# Decrypt the message
-decrypted_message = xor_encrypt_decrypt(encrypted_message, key)
-print(f"Decrypted Message: {decrypted_message}")
+
+if user_input == "1":
+    user_input = input("Enter your message you want to encrypt: ")
+    message = user_input
+    user_input = input("Enter they key you want to encrypt with: ")
+    key = user_input
+
+    encrypted_message = xor_encrypt_decrypt(message, key)
+    print(f"Encrypted Message: {encrypted_message}")
+    
+if user_input == "2":
+    user_input = input("Enter your message you want to decrypt: ")
+    message = user_input
+    user_input = input("Enter they key you want to decrypt with: ")
+    key = user_input
+
+    decrypted_message = xor_encrypt_decrypt(message, key)
+    print(f"Decrypted Message: {decrypted_message}")
+    
